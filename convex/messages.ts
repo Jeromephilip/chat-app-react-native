@@ -9,8 +9,11 @@ export const sendMessage = mutation({
 })
 
 export const get = query({
-  args: {},
-  handler: async (ctx) => {
-    return await ctx.db.query('groups').collect();
+  args: { chatid: v.id('groups') },
+  handler: async ({db}, { chatid }) => {
+      return await db
+      .query('messages')
+      .filter((q) => q.eq(q.field('group_id'), chatid))
+      .collect();
   },
 });

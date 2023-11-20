@@ -32,7 +32,7 @@ export default function RootLayoutNav() {
             ),
           }}
         />
-        <Stack.Screen name="(chat)/[chatid]" options={{ headerTitle: 'Test' }} />
+        <Stack.Screen name="(chat)/[chatid]" options={{ headerTitle: '' }} />
         <Stack.Screen
           name="(modal)/create"
           options={{
